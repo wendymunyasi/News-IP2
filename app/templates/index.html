@@ -1,0 +1,61 @@
+{% import 'macros.html' as macro%}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Welcome to the best News website of this century </title>
+    {% endif %}
+</head>
+
+<body>
+    <!--General news section-->
+    <h1> General News </h1>
+    <ul>
+        {{macro.displayNewsSources(general)}}
+    </ul>
+
+    <!--Business news section-->
+    <h1> Business News </h1>
+    <ul>
+        {{macro.displayNewsSources(business)}}
+    </ul>
+
+    <!--Technology news section-->
+    <h1> Technology News </h1>
+    <ul>
+        {{macro.displayNewsSources(technology)}}
+    </ul>
+
+    <!--Sports news section-->
+    <h1> Sports News </h1>
+    <ul>
+        {{macro.displayNewsSources(sports)}}
+    </ul>
+
+    <!--Entertainment news section-->
+    <h1> Entertainment News </h1>
+    <ul>
+        {{macro.displayNewsSources(entertainment)}}
+    </ul>
+
+    <!--Health news section-->
+    <h1> Health News </h1>
+    <ul>
+        {{macro.displayNewsSources(health)}}
+    </ul>
+
+    <!--Science news section-->
+    <h1> Science News </h1>
+    <ul>
+        {{macro.displayNewsSources(science)}}
+    </ul>
+
+
+</body>
+
+</html>
