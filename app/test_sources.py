@@ -1,7 +1,7 @@
 import unittest
-from models import sources
+from models import source
 
-Source = sources.Source
+Source = source.Source
 
 
 class SourceTest(unittest.TestCase):
