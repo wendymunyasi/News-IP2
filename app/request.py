@@ -13,7 +13,7 @@ api_key = app.config['NEWS_API_KEY']
 base_url = app.config["NEWS_API_BASE_URL"]
 
 # Getting the article base url
-article_base_url = app.config["ARTICLE_BASE_URL"]
+# article_base_url = app.config["ARTICLES_BASE_URL"]
 
 
 def get_sources(category):
@@ -60,44 +60,31 @@ def process_sources(source_sources_list):
     return source_results
 
 
-def get_articles(source_id):
+def get_source(source_id):
     '''
-    Function that gets the json response to our url request
-    '''
-
-    get_articles_url = article_base_url.format(source_id, api_key)
-
-    with urllib.request.urlopen(get_articles_url) as url:
-        get_articles_data = url.read()
-        get_articles_response = json.loads(get_articles_data)
-
-        article_results = None
-
-        if get_articles_response['artilces']:
-            articles_articles_list = get_articles_response['sources']
-            article_results = process_articles(articles_articles_list)
-
-    return article_results
-
-
-def process_articles(articles_articles_list):
-    '''
-    Function that takes the sources results and transform them to a list of objects
+    Function that gets the articles from the source using the id of the source
     '''
 
-    article_results = []
+    get_source_details_url = base_url.format(source_id, api_key)
 
-    for article_item in articles_articles_list:
-        author = article_item.get('author')
-        title = article_item.get('title')
-        description = article_item.get('description')
-        url = article_item.get('url')
-        publishedAt = article_item.get('publishedAt')
-        content = article_item.get('content')
+    with urllib.request.urlopen(get_source_details_url) as url:
+        source_details_data = url.read()
+        source_details_response = json.loads(source_details_data)
 
-        if url:
-            article_object = Article(
-                author, title, description, url, publishedAt, content)
-            article_results.append(article_object)
+        print(source_details_response)
 
-    return article_results
+        source_object = None
+
+        if source_details_response:
+            source_id = source_details_response.get('id')
+            name = source_details_response.get('name')
+            description = source_details_response.get('description')
+            url = source_details_response.get('url')
+            category = source_details_response.get('category')
+            language = source_details_response.get('language')
+            country = source_details_response.get('country')
+
+            source_object = Source(
+                source_id, name, description, url, category, language, country)
+
+    return source_object

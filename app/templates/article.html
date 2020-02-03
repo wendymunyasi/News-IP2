@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+<!-- Content block -->
+{% block content %}
+<p>bhbjnb</p>
+<div class="container">
+
+    <h1>Title: {{source.title}}</h1>
+    <h3>Author: {{ source.author }}</h3>
+    <h2>{{source.description}}</h2>
+    <p>{{source.publishedAt}}</p>
+    <hr>
+    <p>{{source.content}}</p>
+
+</div>
+{% endblock %}
