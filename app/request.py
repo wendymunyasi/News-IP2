@@ -67,6 +67,8 @@ def get_article(article_id):
 
     get_articles_url = article_base_url.format(article_id, api_key)
 
+    print(get_articles_url)
+
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -77,10 +79,13 @@ def get_article(article_id):
             article_articles_list = get_articles_response['articles']
             articles_results = process_articles(article_articles_list)
 
+        # print(get_articles_response)
+        print(articles_results)
+
     return articles_results
 
+
 def process_articles(article_articles_list):
-    
     '''
     Function that takes the sources results and transform them to a list of objects
     '''
@@ -99,7 +104,7 @@ def process_articles(article_articles_list):
 
         if urlToImage:
             article_object = Article(
-                article_id, author, title, description, url, urlToImage,publishedAt, content)
+                article_id, author, title, description, url, urlToImage, publishedAt, content)
             article_results.append(article_object)
 
-    return article_results 
+    return article_results
