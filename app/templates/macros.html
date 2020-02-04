@@ -22,14 +22,14 @@
 
 {% for article in article_articles_list %}
     <a href="{{article.url}}">
-        <img src="{{article.urlToImage}}" alt="image" class="responsive">
+        <img src="{{article.urlToImage}}" alt="image" class="responsive" style="align-items: center;">
     </a>
     
-    <u><h4>{{article.title}}</h4></u>
+    <u><h4 style="font-size: 25px;">{{article.title}}</h4></u>
     <!-- <h4>Description: {{article.description}}</h4> -->
-    <p>{{article.content}}</p>
-    <a href="{{article.url}}" class="btn btn-primary" target="">ReadMore</a>
-    <p>{{article.url}}</p>
+    <p style="font-size: 18px;">{{article.content}}</p>
+    <a href="{{article.url}}" class="btn btn-primary" target="">ReadMore</a><br>
+    <br>
     <p><strong>Published on Date: </strong>{{article.publishedAt}} by <strong>Author: </strong>{{article.author}}</p>
 
     <hr>

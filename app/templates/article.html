@@ -9,8 +9,12 @@
 {% endblock %}
 
 <!-- Content block -->
-<div class="container">
 {% block content %}
+<div class="container" id="articlee" style="background-color: brown;">
+
+    <strong><u><h1 class="text-center">Articles</h1></u></strong>
+    <br>
     <div>{{macro.displayArticlesList(articles)}}</div>
-{% endblock %}
+
 </div>
+{% endblock %}
