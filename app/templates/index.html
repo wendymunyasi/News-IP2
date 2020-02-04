@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+<!-- Content block -->
+{% block content %}
+
+    <!--General Sources section-->
+    <h1>General Sources</h1>
+    <ul>
+        {{macro.displayNewsSources(general)}}
+    </ul>
+    <!--Business Sources section-->
+    <h1>Business Sources</h1>
+    <ul>
+        {{macro.displayNewsSources(business)}}
+    </ul>
+    <!--Technology Sources section-->
+    <h1>Technology Sources</h1>
+    <ul>
+        {{macro.displayNewsSources(technology)}}
+    </ul>
+    <!--Sports Sources section-->
+    <h1>Sports Sources</h1>
+    <ul>
+        {{macro.displayNewsSources(sports)}}
+    </ul>
+    <!--Entertainment Sources section-->
+    <h1>Entertainment Sources</h1>
+    <ul>
+        {{macro.displayNewsSources(entertainment)}}
+    </ul>
+    <!--Health Sources section-->
+    <h1>Health Sources</h1>
+    <ul>
+        {{macro.displayNewsSources(health)}}
+    </ul>
+    <!--Science Sources section-->
+    <h1>Science Sources</h1>
+    <ul>
+        {{macro.displayNewsSources(science)}}
+    </ul>
+
+{% endblock%}
