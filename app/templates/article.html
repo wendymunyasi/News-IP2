@@ -1,10 +1,7 @@
 {% extends 'base.html'%}
+{% import 'macros.html' as macro%}
 
 <!-- Content block -->
 {% block content %}
-<p>bhbjnb</p>
-{% for article in article_articles_list %}
-    <li>{{ article.article_id}}</li>
-    <li>{{article.name}}</li>
-{% endfor %}
+    <div>{{macro.displayArticlesList(articles)}}</div>
 {% endblock %}
