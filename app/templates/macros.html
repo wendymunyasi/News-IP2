@@ -1,12 +1,12 @@
 {% macro displayNewsSources(source_sources_list) %}
 
 {% for source in source_sources_list %}
-    <li>{{ source.name}}</li>
+    <strong><p>{{ source.name}}</p></strong>
     <p>{{source.description}}</p>
     <a href="{{source.url}}">Visit {{source.id}}</a>
     <a href="/article/{{source.source_id}}" target="_blank" style="color: red;">
     View articles ></a>
-    {{source.title}}
+    <hr>
 {% endfor %}
 
 {% endmacro %}
@@ -15,13 +15,18 @@
 
 {% for article in article_articles_list %}
     <a href="{{article.url}}">
-        <img src="{{article.urlToImage}}" alt="image">
+        <img src="{{article.urlToImage}}" alt="image" class="responsive">
     </a>
-    <h3>Author:{{article.author}}</h3>
-    <h2>Title: {{article.title}}</h2>
-    <h4>Description: {{article.description}}</h4>
-    <p>Published on Date: {{article.publishedAt}}</p>
-    <p>Content:{{article.content}}</p>
+    
+    <u><h4>{{article.title}}</h4></u>
+    <!-- <h4>Description: {{article.description}}</h4> -->
+    <p>{{article.content}}</p>
+    <a href="{{article.url}}" class="btn btn-primary" target="">ReadMore</a>
+    <p>{{article.url}}</p>
+    <p><strong>Published on Date: </strong>{{article.publishedAt}} by <strong>Author: </strong>{{article.author}}</p>
+
+    <hr>
+    <p></p>
 
 {% endfor%}
 
