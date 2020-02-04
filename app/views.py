@@ -21,15 +21,14 @@ def index():
     return render_template('index.html', title=title, general=general_source, business=business_source, sports=sports_source, entertainment=entertainment_source, health=health_source, science=science_source, technology=technology_source)
 
 
-@app.route('/articles')
+@app.route('/article/<article_id>')
 def article(article_id):
     '''
     View article page function that returns the articles under the source
-    
+
     '''
-    
+
     articles = get_article(article_id)
-    
-    title = f'{article_id}'
-     
-    return render_template('article.html', title = title, articles = articles)
+    print(articles)
+
+    return render_template('article.html',id = article_id, articles=articles)
