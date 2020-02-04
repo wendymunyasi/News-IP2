@@ -1,0 +1,9 @@
+body {
+    /* background-image: url(../images/wood.jpg); */
+}
+
+.responsive {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
