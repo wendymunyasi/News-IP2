@@ -31,4 +31,4 @@ def article(article_id):
     articles = get_article(article_id)
     print(articles)
 
-    return render_template('article.html',id = article_id, articles=articles)
+    return render_template('article.html', id=article_id, articles=articles)
