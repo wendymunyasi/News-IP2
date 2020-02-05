@@ -26,7 +26,7 @@ A web application that users can use to check for latest news and also read news
 
 | Behaviour | Input | Output |
 | --------- | ------| ------ |
-|Open your terminal|Type this command in the terminal **./run.py** and press  `enter`|The terminal displays the local host|
+|Open your terminal|Type this command in the terminal **./start.sh** and press  `enter`|The terminal displays the local host|
 |Press control then click the local host  | |Your browser opens and the application is displayed.
 |Click on the word 'visit' under any news source| | A new tab opens displaying the news source and it's components|
 |Click on the words 'view articles' under any news source | | A new tab opens showing the articles of that source|
@@ -36,8 +36,7 @@ The following is the github link to the project "NEWS-IP2": https://github.com/w
 This site lacks github pages
  
 ### CODEBEAT
-[![codebeat badge](https://codebeat.co/badges/570ebdad-5058-4edf-842c-2283d6a47ab0)](https://codebeat.co/projects/github-com-wendymunyasi-password-locker-dev)
-
+[![codebeat badge](https://codebeat.co/badges/2bc3b227-df49-4fa5-a538-a97c38215da5)](https://codebeat.co/projects/github-com-wendymunyasi-news-ip2-master)
 
 ##The following include the list of technologies used:
 
@@ -46,8 +45,7 @@ This site lacks github pages
 ### Known Bugs
 
 The UI isn't as user friendly.
-Some functions don't work but I will look at them in the future.
 
 ### Collaborate
 
-To colloborate, reach me through my email address wendymunyasi@gmail.com
+To collaborate, reach me through my email address wendymunyasi@gmail.com
