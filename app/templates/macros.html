@@ -1,12 +1,19 @@
 {% macro displayNewsSources(source_sources_list) %}
 
 {% for source in source_sources_list %}
-    <li>{{ source.name}}</li>
-    <p>{{source.description}}</p>
-    <a href="{{source.url}}">Visit {{source.id}}</a>
-    <a href="/article/{{source.source_id}}" target="_blank" style="color: red;">
-    View articles ></a>
-    {{source.title}}
+    <strong><p style="font-size: 30px;">{{ source.name}}</p></strong>
+    <p style="font-size: 20px;">{{source.description}}</p>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{{source.url}}" target="_blank" class="btn btn-success"><strong>Visit Source {{source.id}}</strong></a>
+        </div>
+        <div class="col-md-6">
+            <a href="/article/{{source.source_id}}" class="btn btn-warning" target="_blank" >
+                <strong>View Source Articles</strong></a>
+        </div>
+    </div>
+    
+    <hr>
 {% endfor %}
 
 {% endmacro %}
@@ -15,13 +22,18 @@
 
 {% for article in article_articles_list %}
     <a href="{{article.url}}">
-        <img src="{{article.urlToImage}}" alt="image">
+        <img src="{{article.urlToImage}}" alt="image" class="responsive" style="align-items: center;">
     </a>
-    <h3>Author:{{article.author}}</h3>
-    <h2>Title: {{article.title}}</h2>
-    <h4>Description: {{article.description}}</h4>
-    <p>Published on Date: {{article.publishedAt}}</p>
-    <p>Content:{{article.content}}</p>
+    
+    <u><h4 style="font-size: 25px;">{{article.title}}</h4></u>
+    <!-- <h4>Description: {{article.description}}</h4> -->
+    <p style="font-size: 18px;">{{article.content}}</p>
+    <a href="{{article.url}}" class="btn btn-primary" target="">ReadMore</a><br>
+    <br>
+    <p><strong>Published on Date: </strong>{{article.publishedAt}} by <strong>Author: </strong>{{article.author}}</p>
+
+    <hr>
+    <p></p>
 
 {% endfor%}
 
